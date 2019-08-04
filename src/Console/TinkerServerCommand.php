@@ -5,8 +5,8 @@ namespace RedMoon\TinkerServer\Console;
 use Psy\Shell;
 use Psy\Configuration;
 use Illuminate\Console\Command;
-use Laravel\Tinker\ClassAliasAutoloader;
 use RedMoon\TinkerServer\Server;
+use Laravel\Tinker\ClassAliasAutoloader;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 

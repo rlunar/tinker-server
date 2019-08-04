@@ -8,8 +8,8 @@ use React\EventLoop\Factory;
 use React\EventLoop\LoopInterface;
 use React\Socket\ConnectionInterface;
 use React\Socket\Server as SocketServer;
-use Symfony\Component\Console\Output\BufferedOutput;
 use RedMoon\TinkerServer\Shell\ExecutionClosure;
+use Symfony\Component\Console\Output\BufferedOutput;
 
 class Server
 {
