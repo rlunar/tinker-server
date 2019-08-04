@@ -1,8 +1,8 @@
 <?php
 
-/*
- * You can place your custom package configuration in here.
- */
 return [
-
+    /*
+     * The host to use when listening for debug server connections.
+     */
+    'host' => 'tcp://127.0.0.1:9914',
 ];

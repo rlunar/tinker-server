@@ -1,48 +1,42 @@
 <?php
 
-namespace Redmoon\TinkerServer\Console;
+namespace RedMoon\TinkerServer\Console;
 
 use Psy\Shell;
 use Psy\Configuration;
-use Clue\React\Stdio\Stdio;
-use React\EventLoop\Factory;
 use Illuminate\Console\Command;
+use Laravel\Tinker\ClassAliasAutoloader;
+use RedMoon\TinkerServer\Server;
 use Symfony\Component\Console\Output\BufferedOutput;
+use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 
 class TinkerServerCommand extends Command
 {
     protected $signature = 'tinker-server';
 
-    /** @var BufferedOutput */
-    protected $shellOutput;
-
     public function handle()
     {
-        $shellOutput = new BufferedOutput();
-        $loop = Factory::create();
-        $stdio = new Stdio($loop);
+        $output = $this->createWarningFormatter();
 
-        $shell = $this->getPsyShell();
+        $server = new Server(config('tinker-server.host'), $this->createPsyShell(), $output);
 
-        $stdio->getReadline()->setPrompt('>> ');
-
-        $stdio->on('data', function ($line) use ($stdio, $shell) {
-            $line = rtrim($line, "\r\n");
-            $shell->addCode($line);
-            $closure = new ExecutionClosure($shell);
-            $closure->execute();
-            $stdio->write($this->shellOutput->fetch());
-        });
-
-        $loop->run();
+        $server->start();
     }
 
-    /**
-     * Get an instance of PsyShell.
-     *
-     * @return Psy\Shell
-     */
-    protected function getPsyShell() : Shell
+    protected function createWarningFormatter(): BufferedOutput
+    {
+        $output = new BufferedOutput();
+
+        if (! $output->getFormatter()->hasStyle('warning')) {
+            $style = new OutputFormatterStyle('yellow');
+
+            $output->getFormatter()->setStyle('warning', $style);
+        }
+
+        return $output;
+    }
+
+    protected function createPsyShell()
     {
         $config = new Configuration([
             'updateCheck' => 'never',
@@ -53,26 +47,22 @@ class TinkerServerCommand extends Command
         );
 
         $shell = new Shell($config);
-        $shell->setOutput($this->shellOutput);
+
+        $path = $this->getLaravel()->basePath().DIRECTORY_SEPARATOR.'vendor/composer/autoload_classmap.php';
+
+        ClassAliasAutoloader::register($shell, $path);
 
         return $shell;
     }
 
-    /**
-     * Get an array of Laravel tailored casters.
-     *
-     * @return array
-     */
-    protected function getCasters() : array
+    protected function getCasters()
     {
         $casters = [
             'Illuminate\Support\Collection' => 'Laravel\Tinker\TinkerCaster::castCollection',
         ];
-
         if (class_exists('Illuminate\Database\Eloquent\Model')) {
             $casters['Illuminate\Database\Eloquent\Model'] = 'Laravel\Tinker\TinkerCaster::castModel';
         }
-
         if (class_exists('Illuminate\Foundation\Application')) {
             $casters['Illuminate\Foundation\Application'] = 'Laravel\Tinker\TinkerCaster::castApplication';
         }

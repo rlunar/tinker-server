@@ -1,11 +1,11 @@
 <?php
 
-namespace Redmoon\TinkerServer;
+namespace RedMoon\TinkerServer;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Redmoon\TinkerServer\Skeleton\SkeletonClass
+ * @see \RedMoon\TinkerServer\Skeleton\SkeletonClass
  */
 class TinkerServerFacade extends Facade
 {

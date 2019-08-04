@@ -1,6 +1,6 @@
 <?php
 
-namespace Redmoon\TinkerServer;
+namespace RedMoon\TinkerServer;
 
 class TinkerServer
 {

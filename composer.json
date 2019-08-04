@@ -1,6 +1,6 @@
 {
     "name": "redmoon/tinker-server",
-    "description": "Laravel Tinker Server",
+    "description": "Tinker with your variables while working on your application.",
     "keywords": [
         "redmoon",
         "tinker-server"
@@ -17,22 +17,27 @@
     ],
     "require": {
         "php": "^7.1",
-        "clue/stdio-react": "2.2",
+        "clue/stdio-react": "^2.2",
         "illuminate/support": "5.8.*",
-        "psy/psysh": "@stable"
+        "laravel/tinker": "^1.0",
+        "psy/psysh": "^0.9.9",
+        "react/socket": "^1.3"
     },
     "require-dev": {
         "orchestra/testbench": "3.8.*",
         "phpunit/phpunit": "^7.0"
     },
     "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
         "psr-4": {
-            "Redmoon\\TinkerServer\\": "src"
+            "RedMoon\\TinkerServer\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Redmoon\\TinkerServer\\Tests\\": "tests"
+            "RedMoon\\TinkerServer\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -46,10 +51,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Redmoon\\TinkerServer\\TinkerServerServiceProvider"
+                "RedMoon\\TinkerServer\\TinkerServerServiceProvider"
             ],
             "aliases": {
-                "TinkerServer": "Redmoon\\TinkerServer\\TinkerServerFacade"
+                "TinkerServer": "RedMoon\\TinkerServer\\TinkerServerFacade"
             }
         }
     }
