@@ -5,13 +5,13 @@
         "redmoon",
         "tinker-server"
     ],
-    "homepage": "https://github.com/redmoon/tinker-server",
+    "homepage": "https://github.com/rlunar/tinker-server",
     "license": "GNU AGPLv",
     "type": "library",
     "authors": [
         {
             "name": "Roberto Luna Rojas",
-            "email": "roberto.luna.rojas@gmail.com",
+            "email": "rluna@webdcg.com",
             "role": "Developer"
         }
     ],
