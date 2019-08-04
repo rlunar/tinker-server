@@ -2,11 +2,11 @@
 
 namespace Redmoon\TinkerServer\Console;
 
-use Clue\React\Stdio\Stdio;
-use Illuminate\Console\Command;
-use Psy\Configuration;
 use Psy\Shell;
+use Psy\Configuration;
+use Clue\React\Stdio\Stdio;
 use React\EventLoop\Factory;
+use Illuminate\Console\Command;
 use Symfony\Component\Console\Output\BufferedOutput;
 
 class TinkerServerCommand extends Command
@@ -38,14 +38,14 @@ class TinkerServerCommand extends Command
     }
 
     /**
-     * Get an instance of PsyShell
+     * Get an instance of PsyShell.
      *
      * @return Psy\Shell
      */
     protected function getPsyShell() : Shell
     {
         $config = new Configuration([
-            'updateCheck' => 'never'
+            'updateCheck' => 'never',
         ]);
 
         $config->getPresenter()->addCasters(
