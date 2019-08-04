@@ -32,7 +32,7 @@ class Server
     protected $stdio;
 
     /**
-     * Server constructor
+     * Server constructor.
      *
      * @param string             $host
      * @param Shell              $shell
@@ -51,7 +51,7 @@ class Server
     }
 
     /**
-     * Start Tinker Server
+     * Start Tinker Server.
      *
      * @return void
      */
@@ -63,7 +63,7 @@ class Server
     }
 
     /**
-     * Create SocketServer
+     * Create SocketServer.
      *
      * @return void
      */
@@ -89,7 +89,7 @@ class Server
     }
 
     /**
-     * Create Stdio
+     * Create Stdio.
      *
      * @return Stdio
      */
@@ -110,7 +110,7 @@ class Server
     }
 
     /**
-     * Execute Code
+     * Execute Code.
      *
      * @param  [type] $code
      *

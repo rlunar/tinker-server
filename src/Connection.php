@@ -11,7 +11,7 @@ class Connection
     protected $host;
 
     /**
-     * Connection constructor
+     * Connection constructor.
      *
      * @param string $host
      */
@@ -21,7 +21,7 @@ class Connection
     }
 
     /**
-     * Write
+     * Write.
      *
      * @param  array  $namedParameters
      *
@@ -57,7 +57,7 @@ class Connection
     }
 
     /**
-     * nullErrorHandler
+     * nullErrorHandler.
      *
      * @param  $t
      * @param  $m
@@ -70,7 +70,7 @@ class Connection
     }
 
     /**
-     * Create Socket
+     * Create Socket.
      *
      * @return resource
      */

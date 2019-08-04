@@ -16,7 +16,7 @@ class TinkerServerCommand extends Command
     protected $signature = 'tinker-server';
 
     /**
-     * Handle Command
+     * Handle Command.
      *
      * @return void
      */
@@ -28,7 +28,7 @@ class TinkerServerCommand extends Command
     }
 
     /**
-     * Create Warning Formatter
+     * Create Warning Formatter.
      *
      * @return BufferedOutput
      */
@@ -45,7 +45,7 @@ class TinkerServerCommand extends Command
     }
 
     /**
-     * Create PsyShell
+     * Create PsyShell.
      *
      * @return Shell
      */
@@ -68,7 +68,7 @@ class TinkerServerCommand extends Command
     }
 
     /**
-     * Get Casters
+     * Get Casters.
      *
      * @return array
      */
