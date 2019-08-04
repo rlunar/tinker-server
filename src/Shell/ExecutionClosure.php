@@ -28,7 +28,7 @@ class ExecutionClosure extends BaseExecutionClosure
                     \set_error_handler([$__psysh__, 'handleError']);
 
                     // Evaluate the current code buffer
-                    $_ = eval($__psysh__->onExecute($__psysh__->flushCode() ?: ExecutionClosure::NOOP_INPUT));
+                    $_ = eval($__psysh__->onExecute($__psysh__->flushCode() ?: self::NOOP_INPUT));
                 } catch (\Throwable $_e) {
                     // Clean up on our way out.
                     \restore_error_handler();
