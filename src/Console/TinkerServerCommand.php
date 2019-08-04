@@ -12,31 +12,44 @@ use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 
 class TinkerServerCommand extends Command
 {
+    /** @var string */
     protected $signature = 'tinker-server';
 
+    /**
+     * Handle Command
+     *
+     * @return void
+     */
     public function handle()
     {
         $output = $this->createWarningFormatter();
-
         $server = new Server(config('tinker-server.host'), $this->createPsyShell(), $output);
-
         $server->start();
     }
 
-    protected function createWarningFormatter(): BufferedOutput
+    /**
+     * Create Warning Formatter
+     *
+     * @return BufferedOutput
+     */
+    protected function createWarningFormatter() : BufferedOutput
     {
         $output = new BufferedOutput();
 
         if (! $output->getFormatter()->hasStyle('warning')) {
             $style = new OutputFormatterStyle('yellow');
-
             $output->getFormatter()->setStyle('warning', $style);
         }
 
         return $output;
     }
 
-    protected function createPsyShell()
+    /**
+     * Create PsyShell
+     *
+     * @return Shell
+     */
+    protected function createPsyShell() : Shell
     {
         $config = new Configuration([
             'updateCheck' => 'never',
@@ -47,7 +60,6 @@ class TinkerServerCommand extends Command
         );
 
         $shell = new Shell($config);
-
         $path = $this->getLaravel()->basePath().DIRECTORY_SEPARATOR.'vendor/composer/autoload_classmap.php';
 
         ClassAliasAutoloader::register($shell, $path);
@@ -55,14 +67,21 @@ class TinkerServerCommand extends Command
         return $shell;
     }
 
-    protected function getCasters()
+    /**
+     * Get Casters
+     *
+     * @return array
+     */
+    protected function getCasters() : array
     {
         $casters = [
             'Illuminate\Support\Collection' => 'Laravel\Tinker\TinkerCaster::castCollection',
         ];
+
         if (class_exists('Illuminate\Database\Eloquent\Model')) {
             $casters['Illuminate\Database\Eloquent\Model'] = 'Laravel\Tinker\TinkerCaster::castModel';
         }
+
         if (class_exists('Illuminate\Foundation\Application')) {
             $casters['Illuminate\Foundation\Application'] = 'Laravel\Tinker\TinkerCaster::castApplication';
         }

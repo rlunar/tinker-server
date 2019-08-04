@@ -4,15 +4,29 @@ namespace RedMoon\TinkerServer;
 
 class Connection
 {
+    /** @var int */
     protected $socket;
 
+    /** @var string */
     protected $host;
 
-    public function __construct($host)
+    /**
+     * Connection constructor
+     *
+     * @param string $host
+     */
+    public function __construct(string $host)
     {
         $this->host = $host;
     }
 
+    /**
+     * Write
+     *
+     * @param  array  $namedParameters
+     *
+     * @return bool
+     */
     public function write(array $namedParameters): bool
     {
         if (! $this->socket = $this->socket ?: $this->createSocket()) {
@@ -42,11 +56,24 @@ class Connection
         return false;
     }
 
+    /**
+     * nullErrorHandler
+     *
+     * @param  $t
+     * @param  $m
+     *
+     * @return void
+     */
     private static function nullErrorHandler($t, $m)
     {
         // no-op
     }
 
+    /**
+     * Create Socket
+     *
+     * @return resource
+     */
     private function createSocket()
     {
         set_error_handler([self::class, 'nullErrorHandler']);

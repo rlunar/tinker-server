@@ -52,10 +52,7 @@
         "laravel": {
             "providers": [
                 "RedMoon\\TinkerServer\\TinkerServerServiceProvider"
-            ],
-            "aliases": {
-                "TinkerServer": "RedMoon\\TinkerServer\\TinkerServerFacade"
-            }
+            ]
         }
     }
 }

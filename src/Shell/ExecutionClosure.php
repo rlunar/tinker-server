@@ -12,6 +12,12 @@ use Psy\ExecutionClosure as BaseExecutionClosure;
 
 class ExecutionClosure extends BaseExecutionClosure
 {
+    /**
+     * ExecutionClosure constructor
+     *
+     * @param Shell  $__psysh__
+     * @param [type] $__line__
+     */
     public function __construct(Shell $__psysh__, $__line__)
     {
         $this->setClosure($__psysh__, function () use ($__psysh__, $__line__) {
@@ -19,14 +25,10 @@ class ExecutionClosure extends BaseExecutionClosure
                 try {
                     // Restore execution scope variables
                     \extract($__psysh__->getScopeVariables(false), EXTR_SKIP);
-
                     $_ = new NoReturnValue();
-
                     $__psysh__->addCode($__line__);
-
                     // Convert all errors to exceptions
                     \set_error_handler([$__psysh__, 'handleError']);
-
                     // Evaluate the current code buffer
                     $_ = eval($__psysh__->onExecute($__psysh__->flushCode() ?: self::NOOP_INPUT));
                 } catch (\Throwable $_e) {
@@ -57,9 +59,7 @@ class ExecutionClosure extends BaseExecutionClosure
             }
 
             \restore_error_handler();
-
             $__psysh__->writeReturnValue($_);
-
             // Save execution scope variables for next time
             $__psysh__->setScopeVariables(\get_defined_vars());
 
