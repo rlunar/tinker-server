@@ -6,7 +6,7 @@
         "tinker-server"
     ],
     "homepage": "https://github.com/rlunar/tinker-server",
-    "license": "GPLv3",
+    "license": "MIT",
     "type": "library",
     "authors": [
         {
