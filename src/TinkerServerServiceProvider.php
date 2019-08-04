@@ -3,6 +3,7 @@
 namespace Redmoon\TinkerServer;
 
 use Illuminate\Support\ServiceProvider;
+use Redmoon\TinkerServer\Console\TinkerServerCommand;
 
 class TinkerServerServiceProvider extends ServiceProvider
 {
@@ -40,7 +41,9 @@ class TinkerServerServiceProvider extends ServiceProvider
             ], 'lang');*/
 
             // Registering package commands.
-            // $this->commands([]);
+            $this->commands([
+                TinkerServerCommand::class,
+            ]);
         }
     }
 
