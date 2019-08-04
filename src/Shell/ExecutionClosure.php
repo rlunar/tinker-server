@@ -13,7 +13,7 @@ use Psy\ExecutionClosure as BaseExecutionClosure;
 class ExecutionClosure extends BaseExecutionClosure
 {
     /**
-     * ExecutionClosure constructor
+     * ExecutionClosure constructor.
      *
      * @param Shell  $__psysh__
      * @param [type] $__line__
