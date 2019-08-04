@@ -1,0 +1,54 @@
+{
+    "name": "redmoon/tinker-server",
+    "description": "Laravel Tinker Server",
+    "keywords": [
+        "redmoon",
+        "tinker-server"
+    ],
+    "homepage": "https://github.com/redmoon/tinker-server",
+    "license": "GNU AGPLv",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Roberto Luna Rojas",
+            "email": "roberto.luna.rojas@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Redmoon\\TinkerServer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Redmoon\\TinkerServer\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Redmoon\\TinkerServer\\TinkerServerServiceProvider"
+            ],
+            "aliases": {
+                "TinkerServer": "Redmoon\\TinkerServer\\TinkerServerFacade"
+            }
+        }
+    }
+}
