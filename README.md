@@ -2,7 +2,14 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/redmoon/tinker-server.svg?style=flat-square)](https://packagist.org/packages/redmoon/tinker-server)
 [![Build Status](https://img.shields.io/travis/redmoon/tinker-server/master.svg?style=flat-square)](https://travis-ci.org/redmoon/tinker-server)
+[![StyleCI](https://github.styleci.io/repos/200523436/shield?branch=master)](https://github.styleci.io/repos/200523436)
+
 [![Quality Score](https://img.shields.io/scrutinizer/g/redmoon/tinker-server.svg?style=flat-square)](https://scrutinizer-ci.com/g/redmoon/tinker-server)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rlunar/tinker-server/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rlunar/tinker-server/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/rlunar/tinker-server/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/rlunar/tinker-server/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/rlunar/tinker-server/badges/build.png?b=master)](https://scrutinizer-ci.com/g/rlunar/tinker-server/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/rlunar/tinker-server/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+
 [![Total Downloads](https://img.shields.io/packagist/dt/redmoon/tinker-server.svg?style=flat-square)](https://packagist.org/packages/redmoon/tinker-server)
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
