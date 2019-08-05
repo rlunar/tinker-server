@@ -3,9 +3,9 @@
 namespace RedMoon\TinkerServer\Tests;
 
 use PHPUnit\Framework\TestCase;
+use RedMoon\TinkerServer\Connection;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\PhpProcess;
-use RedMoon\TinkerServer\Connection;
 use Symfony\Component\Process\Exception\ProcessTimedOutException;
 
 class ConnectionTest extends TestCase
