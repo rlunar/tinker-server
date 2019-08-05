@@ -1,7 +1,7 @@
 # Laravel Tinker Server
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/redmoon/tinker-server.svg?style=flat-square)](https://packagist.org/packages/redmoon/tinker-server)
-[![Build Status](https://img.shields.io/travis/rlunar/tinker-server/master.svg?style=flat-square)](https://travis-ci.org/rlunar/tinker-server)
+[![Codeship Status for rlunar/tinker-server](https://app.codeship.com/projects/3f5b72d0-99eb-0137-2e09-42d0bbb52322/status?branch=master)](https://app.codeship.com/projects/358124)
 [![StyleCI](https://github.styleci.io/repos/200523436/shield?branch=master)](https://github.styleci.io/repos/200523436)
 [![Quality Score](https://img.shields.io/scrutinizer/g/rlunar/tinker-server.svg?style=flat-square)](https://scrutinizer-ci.com/g/rlunar/tinker-server)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rlunar/tinker-server/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rlunar/tinker-server/?branch=master)
@@ -9,6 +9,7 @@
 [![Build Status](https://scrutinizer-ci.com/g/rlunar/tinker-server/badges/build.png?b=master)](https://scrutinizer-ci.com/g/rlunar/tinker-server/build-status/master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/rlunar/tinker-server/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![Total Downloads](https://img.shields.io/packagist/dt/redmoon/tinker-server.svg?style=flat-square)](https://packagist.org/packages/redmoon/tinker-server)
+[![Build Status](https://img.shields.io/travis/rlunar/tinker-server/master.svg?style=flat-square)](https://travis-ci.org/rlunar/tinker-server)
 
 This package will give you a tinker server, that collects all your `tinker` call outputs **and** allows you to interact with the variables on the fly.
 
